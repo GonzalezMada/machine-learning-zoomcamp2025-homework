@@ -9,8 +9,12 @@ from sklearn.model_selection import KFold
 	
 import pickle
 
+from pathlib import Path
 #Load the dataset
-df = pd.read_csv('data/heart.csv')
+script_dir = Path(__file__).parent
+data_path = script_dir / 'data' / 'heart.csv'
+df = pd.read_csv(data_path)
+
 # Split the dataset
 df_full_train, df_test = train_test_split(df, test_size=0.2, random_state=1)
 # Reset indexes
