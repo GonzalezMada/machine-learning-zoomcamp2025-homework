@@ -12,6 +12,7 @@ model = keras.models.load_model('/workspaces/machine-learning-zoomcamp2025-homew
 image_path = '/workspaces/machine-learning-zoomcamp2025-homework/08-Deep_Learning/image_t-shirt.jpg'
 img = load_img(image_path, target_size=(150, 150))
 img_array = img_to_array(img)
+print(img_array.shape)
 img_array = np.expand_dims(img_array, axis=0)
 
 predictions = model.predict(img_array)
